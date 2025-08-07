@@ -6,7 +6,7 @@
   </head>
   <body>
     <script>
-      const { showOpenDialog } = window.require('@electron/remote').require('./main.js');
+      const { showOpenDialog } = window.require('@electron/remote').require('./index.js');
 
       window.addEventListener('DOMContentLoaded', async () => {
         const path = await showOpenDialog();

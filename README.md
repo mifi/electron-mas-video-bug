@@ -3,20 +3,16 @@
 ## Setup
 
 1. Install Apple certificates in your keychain and generate a Development Provisioning profile and download it as `Dev.provisionprofile` in this folder
-2. Update with values from Apple:
-  - [package.json](package.json) `build.appId`
-  - [entitlements.mas.plist](entitlements.mas.plist) `com.apple.security.application-groups`
 
 Now build / sing MAS:
 
 ```bash
-export MAS_IDENTITY='Your identity'
+export DEVELOPER_ID='Mac Developer: Your Name (TEAMID)'
+export APP_ID='Your app id'
 
 yarn
-
-npx electron-builder --mac mas-dev -c.mas.provisioningProfile=Dev.provisionprofile -c.mas.identity="$MAS_IDENTITY"
-
-open dist/mas-dev-arm64/Test.app
+yarn package
+open out/electron-mas-video-bug-forge-mas-arm64/electron-mas-video-bug-forge.app
 ```
 
 Download one of the below videos. Now using the file selector, select the video. It's reproducible with HEVC 4K 10-bit videos from iPhone. Examples (from [kodi](https://kodi.wiki/view/Samples)):

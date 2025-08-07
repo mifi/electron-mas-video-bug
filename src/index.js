@@ -1,5 +1,6 @@
 const { BrowserWindow, app, dialog } = require('electron');
 const remote = require('@electron/remote/main');
+const path = require('node:path');
 
 remote.initialize()
 
@@ -15,7 +16,7 @@ app.whenReady().then(() => {
   
   remote.enable(mainWindow.webContents);
   
-  mainWindow.loadFile('index.html');  
+  mainWindow.loadFile(path.join(__dirname, 'index.html'));  
 })
 
 async function showOpenDialog() {
