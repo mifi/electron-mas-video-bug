@@ -2,14 +2,7 @@
 
 ## Setup
 
-1. Install Apple certificates in your keychain and generate a Development Provisioning profile and download it as `Dev.provisionprofile` in this folder
-
-Now build / sing MAS:
-
 ```bash
-export DEVELOPER_ID='Mac Developer: Your Name (TEAMID)'
-export APP_ID='Your app id'
-
 yarn
 yarn package
 open out/electron-mas-video-bug-forge-mas-arm64/electron-mas-video-bug-forge.app
@@ -29,5 +22,5 @@ Observe that the window goes completely blank (background color is still visible
 Compare it to running in dev, where it works as expected:
 
 ```bash
-npx electron main.js
+npx electron src/index.js
 ```
